@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Birthday - A special website just for you">
+    <meta property="og:title" content="Happy Birthday — Open your card ✨">
+    <meta property="og:description" content="A whole website just to celebrate you">
+    <meta property="og:type" content="website">
+    <title>Happy Birthday — Open your card ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" src="music.mp3" preload="auto" loop></audio>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+        </div>
+        <div class="hero-content">
+            <div class="polaroid-hero">
+                <div class="polaroid-frame">
+                    <img src="public/firstpic.jpg" alt="Birthday Bestie" class="polaroid-img" id="heroPhoto" loading="lazy" onerror="handleImageError(this)">
+                    <div class="polaroid-label">12.12</div>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                Happy Birthday, <span class="highlight">Bestie</span><br>
+                <span class="subtitle">to the one who's my forever + always</span>
+            </h1>
+            <button class="cta-button pulse" onclick="scrollToCard()">
+                Open Your Birthday Card ✨
+            </button>
+        </div>
+        <div class="confetti-container" id="confettiContainer"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="section-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-heart">💖</div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="handwritten-intro">How we met</p>
+                    <p class="story-text">
+                        I kept the best of my memory for you. Thank you for turning ordinary days into masterpieces. 
+                        Every laugh, every silence, every chaos — you've been the home in all of it.
+                    </p>
+                    <p class="story-text">
+                        Today we celebrate you — your light, your mischief, your softness. 
+                        Because some people deserve a whole internet, and you're definitely one of them.
+                    </p>
+                </div>
+                <div class="memory-collage">
+                    <div class="polaroid-small">
+                        <div class="polaroid-frame">
+                            <img src="public/secondpic.jpg" alt="Memory 1" class="memory-img" loading="lazy" onerror="handleImageError(this)">
+                        </div>
+                    </div>
+                    <div class="polaroid-small">
+                        <div class="polaroid-frame">
+                            <img src="public/thirdpic.jpg" alt="Memory 2" class="memory-img" loading="lazy" onerror="handleImageError(this)">
+                        </div>
+                    </div>
+                    <div class="polaroid-small">
+                        <div class="polaroid-frame">
+                            <img src="public/fourthpic.jpg" alt="Memory 3" class="memory-img" loading="lazy" onerror="handleImageError(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Birthday Card -->
+    <section class="card-section" id="card">
+        <div class="section-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Your Birthday Card</h2>
+            <div class="card-wrapper">
+                <div class="birthday-card" id="birthdayCard">
+                    <div class="card-front" id="cardFront">
+                        <img src="public/firstpic.jpg" alt="Birthday Bestie" class="card-front-image" loading="lazy" onerror="handleImageError(this)">
+                        <div class="card-gradient"></div>
+                        <div class="card-content-front">
+                            <div class="card-details-box">
+                                <div class="detail-item">
+                                    <span class="detail-label">Name</span>
+                                    <span class="detail-value">Kisaa</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Relation</span>
+                                    <span class="detail-value">Bestie</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Birthday</span>
+                                    <span class="detail-value">12 December</span>
+                                </div>
+                            </div>
+                            <div class="gold-foil-name">Bestie</div>
+                            <p class="card-date">12 December</p>
+                            <div class="card-envelope-icon">✉️</div>
+                            <button class="open-card-btn" onclick="openCard()">
+                                Open Card
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-back" id="cardBack">
+                        <div class="card-content-back">
+                            <p class="card-greeting">To my nearest heart,</p>
+                            <p class="card-message">
+                                On 12 December I celebrate you — the laugh in every silence and the home in every chaos.
+                            </p>
+                            <p class="card-message">
+                                I kept the best of my memory for you. Thank you for turning ordinary days into masterpieces. 
+                                Today we celebrate you — your light, your mischief, your softness.
+                            </p>
+                            <p class="card-signature">— Love, Your Bestie</p>
+                            <div class="card-actions">
+                                <button class="action-btn" onclick="shareCard()">
+                                    Send by Email
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-sparkle">⭐</div>
+            <div class="floating-star">🌟</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-heart">💖</div>
+        </div>
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="gallery-title">Our Moments</h2>
+                <p class="gallery-subtitle">Forever & Always</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Together Forever">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/2.jpg" alt="Our Moment 1" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Together Forever</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Best Friends">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/6.jpg" alt="Our Moment 2" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Best Friends</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Memories">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/7.jpg" alt="Our Moment 3" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Memories</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Love & Laughter">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/5.jpg" alt="Our Moment 4" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Love & Laughter</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Adventures">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/4.jpg" alt="Our Moment 5" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Adventures</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-caption="Forever Yours">
+                    <div class="gallery-frame">
+                        <div class="frame-gradient-border"></div>
+                        <img src="public/our%20moment/8.jpg" alt="Our Moment 6" class="gallery-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <span class="love-icon">💖</span>
+                                <h4 class="photo-caption">Forever Yours</h4>
+                                <span class="photo-date">12.12</span>
+                            </div>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cosmic Door Portal -->
+    <section class="cosmic-door-section" id="cosmicDoor">
+        <div class="container">
+            <div class="door-wrapper">
+                <a href="cosmic.html" class="cosmic-door-link">
+                    <div class="cosmic-door">
+                        <div class="door-frame">
+                            <div class="door-glow"></div>
+                            <div class="door-content">
+                                <h2 class="door-title">Enter Our</h2>
+                                <h3 class="door-subtitle">Cosmic Realm</h3>
+                                <div class="door-icon">🚪✨</div>
+                                <p class="door-hint">Click to explore</p>
+                            </div>
+                            <div class="door-particles"></div>
+                            <div class="door-energy-rings"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Party Plan & RSVP -->
+    <section class="party" id="party">
+        <div class="container">
+            <h2 class="section-title">Party Plan</h2>
+            <div class="party-content">
+                <div class="party-details">
+                    <div class="party-info-card">
+                        <h3>🎉 Celebration Details</h3>
+                        <p><strong>Date:</strong> December 12</p>
+                        <p><strong>Time:</strong> TBD</p>
+                        <p><strong>Theme:</strong> Gen-Z Aesthetic / Deep Feel</p>
+                    </div>
+                    <div class="rsvp-section">
+                        <h3>RSVP</h3>
+                        <p class="rsvp-question">"I'm in with cake"</p>
+                        <div class="rsvp-buttons">
+                            <button class="rsvp-btn yes" onclick="rsvp('yes')">Yes</button>
+                            <button class="rsvp-btn maybe" onclick="rsvp('maybe')">Maybe</button>
+                            <button class="rsvp-btn no" onclick="rsvp('no')">Can't — send love note</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Celebration Room -->
+    <section class="cake-celebration-room" id="cakeRoom">
+        <div class="section-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-star">🌟</div>
+            <div class="floating-heart">💖</div>
+        </div>
+        <div class="container">
+            <!-- Hero Banner -->
+            <div class="cake-room-hero">
+                <h2 class="cake-room-title">🎂 Cake Celebration Room 🎂</h2>
+                <p class="cake-room-subtitle">Your virtual cake paradise — explore, customize, and celebrate!</p>
+                <div class="cake-room-confetti" id="cakeRoomConfetti"></div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="cake-countdown-section">
+                <h3 class="countdown-title">Time Until Cake Cutting 🕐</h3>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Showcase Gallery -->
+            <div class="cake-showcase-section">
+                <h3 class="subsection-title">Cake Showcase Gallery</h3>
+                <div class="cake-showcase-grid">
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop&q=80" alt="Lavender Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Lavender Dream</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop&q=80" alt="Pink Ombre Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Pink Ombre</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=400&h=400&fit=crop&q=80" alt="Chocolate Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Chocolate Delight</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=400&h=400&fit=crop&q=80" alt="Floral Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Floral Fantasy</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=400&fit=crop&q=80" alt="Naked Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Semi-Naked</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                    <div class="cake-showcase-item" onclick="openCakeLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1622480166230-0feab671d3c1?w=400&h=400&fit=crop&q=80" alt="Rainbow Cake" class="cake-showcase-img" loading="lazy" onerror="handleImageError(this)">
+                        <div class="cake-showcase-overlay">
+                            <h4>Rainbow Magic</h4>
+                            <button class="cake-favorite-btn" onclick="event.stopPropagation(); toggleFavorite(this)">❤️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Wish Wall -->
+            <div class="cake-wish-wall-section">
+                <h3 class="subsection-title">Cake Wish Wall 💌</h3>
+                <div class="wish-wall-container">
+                    <div class="wish-form">
+                        <textarea id="wishMessage" placeholder="Write your birthday wish here... 💖" rows="3"></textarea>
+                        <input type="text" id="wishName" placeholder="Your name (optional)">
+                        <button class="submit-wish-btn" onclick="submitWish()">Send Wish ✨</button>
+                    </div>
+                    <div class="wishes-display" id="wishesDisplay">
+                        <!-- Wishes will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Quiz -->
+            <div class="cake-quiz-section">
+                <h3 class="subsection-title">What Cake Are You? 🎯</h3>
+                <div class="quiz-container" id="quizContainer">
+                    <div class="quiz-question" id="quizQuestion">
+                        <p>What's your ideal birthday vibe?</p>
+                        <div class="quiz-options">
+                            <button class="quiz-option" onclick="answerQuiz(1)">✨ Glam & Sparkly</button>
+                            <button class="quiz-option" onclick="answerQuiz(2)">🌸 Soft & Dreamy</button>
+                            <button class="quiz-option" onclick="answerQuiz(3)">🎨 Bold & Colorful</button>
+                            <button class="quiz-option" onclick="answerQuiz(4)">🍫 Classic & Rich</button>
+                        </div>
+                    </div>
+                    <div class="quiz-result" id="quizResult" style="display: none;">
+                        <h4 id="quizResultTitle"></h4>
+                        <p id="quizResultText"></p>
+                        <button class="retake-quiz-btn" onclick="resetQuiz()">Take Again 🔄</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Customization Tool -->
+            <div class="cake-customization-section">
+                <h3 class="subsection-title">Customize Your Cake 🎨</h3>
+                <div class="customization-tool">
+                    <div class="color-picker-section">
+                        <label>Choose Cake Color:</label>
+                        <input type="color" id="cakeColor" value="#CFC1FF" onchange="updateCakePreview()">
+                        <span id="colorDisplay">#CFC1FF</span>
+                    </div>
+                    <div class="decoration-options">
+                        <label>Add Decorations:</label>
+                        <div class="decoration-buttons">
+                            <button class="decoration-btn" onclick="addDecoration('stars')">✨ Stars</button>
+                            <button class="decoration-btn" onclick="addDecoration('hearts')">💖 Hearts</button>
+                            <button class="decoration-btn" onclick="addDecoration('flowers')">🌸 Flowers</button>
+                            <button class="decoration-btn" onclick="addDecoration('confetti')">🎉 Confetti</button>
+                        </div>
+                    </div>
+                    <div class="cake-preview-box" id="cakePreview">
+                        <div class="preview-cake" id="previewCake">🎂</div>
+                        <div class="preview-decorations" id="previewDecorations"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Party Checklist -->
+            <div class="party-checklist-section">
+                <h3 class="subsection-title">Party Prep Checklist ✅</h3>
+                <div class="checklist-container">
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Order the cake</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Decorate the venue</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Prepare playlist</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Set up photo booth</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Get party favors ready</span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" onchange="updateChecklist()">
+                        <span>Confirm guest list</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake + Decor Ideas -->
+    <section class="cake-decor" id="cake">
+        <div class="container">
+            <h2 class="section-title">Cake & Decor Ideas</h2>
+            <div class="cake-grid">
+                <div class="cake-card">
+                    <div class="cake-preview">🎂</div>
+                    <h3>Semi-Naked Lavender Cake</h3>
+                    <p>Edible gold flakes and mica dust</p>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-preview">📸</div>
+                    <h3>Polaroid Collage Cake</h3>
+                    <p>Mini edible images of memories</p>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-preview">✨</div>
+                    <h3>Mirror Glaze Ombré</h3>
+                    <p>Pink → Teal with fondant stars</p>
+                </div>
+            </div>
+            <div class="decor-ideas">
+                <h3>Decor Ideas</h3>
+                <ul class="decor-list">
+                    <li>✨ Mini neon sign: "you are the vibe"</li>
+                    <li>🎈 Matte latex balloons in lavender, cream, teal</li>
+                    <li>📸 Photo wall: film-strip style prints</li>
+                    <li>💡 Fairy lights and kraft paper runner</li>
+                    <li>📝 Memory jar for guest notes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist Section -->
+    <section class="playlist" id="playlist">
+        <div class="section-background-decoration">
+            <div class="floating-heart">💖</div>
+            <div class="floating-heart">💕</div>
+            <div class="floating-star">✨</div>
+            <div class="floating-heart">💗</div>
+            <div class="floating-heart">💖</div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Birthday Playlist</h2>
+            <div class="playlist-wrapper">
+                <div class="cassette-player">
+                    <div class="cassette-icon">🎵</div>
+                    <p class="playlist-note">Your special birthday mix</p>
+                </div>
+                <div class="spotify-embed">
+                    <p class="playlist-placeholder">
+                        Add your Spotify playlist embed here<br>
+                        <small>Or link to your favorite playlist</small>
+                    </p>
+                    <a href="#" class="playlist-link" target="_blank">Open Playlist →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Made with 💖 for the best bestie ever<br>
+                <span class="footer-date">12 December 2024</span>
+            </p>
+            <div class="footer-links">
+                <a href="#" class="footer-link" onclick="shareSite()">Share Site</a>
+            </div>
+            <div class="social-share">
+                <h3 class="social-share-title">Share the Love</h3>
+                <div class="social-buttons">
+                    <button class="social-btn whatsapp" onclick="shareWhatsApp()" aria-label="Share on WhatsApp">
+                        <span class="social-icon">💬</span>
+                        <span class="social-label">WhatsApp</span>
+                    </button>
+                    <button class="social-btn instagram" onclick="shareInstagram()" aria-label="Share on Instagram">
+                        <span class="social-icon">📷</span>
+                        <span class="social-label">Instagram</span>
+                    </button>
+                    <button class="social-btn facebook" onclick="shareFacebook()" aria-label="Share on Facebook">
+                        <span class="social-icon">👥</span>
+                        <span class="social-label">Facebook</span>
+                    </button>
+                    <button class="social-btn twitter" onclick="shareTwitter()" aria-label="Share on Twitter">
+                        <span class="social-icon">🐦</span>
+                        <span class="social-label">Twitter</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Cake Lightbox Modal -->
+    <div class="lightbox-modal" id="cakeLightbox" onclick="closeCakeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeCakeLightbox(event)">&times;</span>
+            <img id="lightboxImage" src="" alt="Cake">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <div class="lightbox-actions">
+                    <button class="lightbox-btn" onclick="shareCakeImage()">Share 📤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
