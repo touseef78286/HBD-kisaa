@@ -7,7 +7,7 @@
       "destination": "/cosmic.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.[^/]+$).*)",
       "destination": "/index.html"
     }
   ]
